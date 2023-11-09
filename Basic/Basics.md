@@ -173,9 +173,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 
 - render is used to convert jsx to tree like structure for react to process the code and send it to browser for displaying jsx
 - this process is transcompiling, in which jsx code is converted to old js code for backward JS
-  engine to understand it.
-- The use of React.StrictMode is a wrapper that enables additional checks and warnings for your components. It helps you catch common mistakes and make your code more robust.
-- ReactDOM.createRoot(document.getElementById('root')): This part creates a root element where your React application will be mounted. It selects the HTML element with 
+  engine to understand it. Done using `babel`
+- The use of `React.StrictMode` is a wrapper that enables additional checks and warnings for your components. It helps you catch common mistakes and make your code more robust.
+- `ReactDOM.createRoot(document.getElementById('root'))`: This part creates a root element where your React application will be mounted. It selects the HTML element with 
 the id 'root' and creates a root instance using createRoot.
 - behind the scene `createRoot` is using react fibre.To know more <a href="https://yash-ghugardare-blogs.hashnode.dev/understanding-core-concepts-in-react" target="_blank">Click Here</a>
 
