@@ -134,7 +134,7 @@ return <li className="item">{name}</li>;
   1. map() - which transforms elements and stores them in a new array,
      **we use it to iterate through an array of data and create React components for each item.**
   2. filter() -**for filtering and rendering subsets of data based on specific criteria. For example -Price Filtering**, it also returns array based on the condition specified.
-- Know more about array methods - <a href="https://yash-ghugardare-blogs.hashnode.dev/simplifying-javascript-with-useful-array-methods">Click</a>
+- Know more about array methods - <a href="https://yash-ghugardare-blogs.hashnode.dev/simplifying-javascript-with-useful-array-methods" target="_blank">Click</a>
 - key prop tell React which array item each component corresponds to, so that it can match them up later.
 - A well-chosen key helps React infer what exactly has happened, and make the correct updates to the DOM tree.
 
@@ -177,7 +177,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 - The use of React.StrictMode is a wrapper that enables additional checks and warnings for your components. It helps you catch common mistakes and make your code more robust.
 - ReactDOM.createRoot(document.getElementById('root')): This part creates a root element where your React application will be mounted. It selects the HTML element with 
 the id 'root' and creates a root instance using createRoot.
-- behind the scene `createRoot` is using react fibre.To know more <a href="https://yash-ghugardare-blogs.hashnode.dev/understanding-core-concepts-in-react"></a>
+- behind the scene `createRoot` is using react fibre.To know more <a href="https://yash-ghugardare-blogs.hashnode.dev/understanding-core-concepts-in-react" target="_blank">Click Here</a>
 
 ## What are hooks in react?
 - hooks are functions that allow you to use state and other React features in functional components. Prior to the introduction of hooks in React 16.8, state and lifecycle 
