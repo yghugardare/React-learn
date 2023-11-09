@@ -26,6 +26,20 @@ const data = [
         price:321,
         actualPrice:600,
         discount:15
-    }
+    },
+    {
+        id:5,
+        productName:"Bata",
+        price:321,
+        actualPrice:600,
+        discount:15
+    },
+    {
+        id:6,
+        productName:"CR7 ",
+        price:321,
+        actualPrice:600,
+        discount:15
+    },
 ];
 export default data;
