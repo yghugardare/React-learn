@@ -240,6 +240,20 @@ function hoverColor() {}
 
 - it will send another batch in second render only if it sees different types of operation being performed on the same setCounter.
 - To increase it by four counts, use the callback which the setCounter accepts and increase it one by one. So, the first function will be called first, the callback will be executed and the next function call will be executed.
+- you can apply this similar concept to toggle between values like true false for each click,Example-
+```javascript
+const [subscribed,setSubscribed] = useState(false);
+function App(){
+  return (
+    <>
+      <p>{subscribed?"✅":"❌"}</p>
+      <button
+      onClick={()=>setSubcribe((prev)=>!prev)}
+      >Subscribe</button>
+    </>
+  )
+}
+```
 
 ## onClick
 

@@ -3,5 +3,5 @@ body{
     color: white;
 }
 button:hover{
-    background-color: black !important;
+    background-color: black;
 }
