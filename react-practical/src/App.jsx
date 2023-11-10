@@ -1,17 +1,17 @@
 import { useState } from "react";
 import "./App.css";
-import ShowProducts from "./Components/ShowProducts";
-import BgButton from "./Components/BgButton";
-import PasswordGenerator from "./Components/PasswordGenerator";
+import {BgButton,CurrencyCovertor,InputBox} from "./Components/component"
+
 function App() {
   const [bgColor,setBgColor] = useState('black');
 
   return (
-    <div className="w-full min-h-[100vh]" style={{backgroundColor:bgColor}}>
+    <div className="w-full min-h-[100vh] flex flex-col gap-5" style={{backgroundColor:bgColor}}>
       {/* <h1 className="text-center text-[3rem]">Store</h1> */}
       {/* <ShowProducts/> */}
       <BgButton setBgColor={setBgColor}/>
-      <PasswordGenerator/>
+      {/* <PasswordGenerator/> */}
+      <CurrencyCovertor/>
     </div>
   );
 }

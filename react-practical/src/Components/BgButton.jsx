@@ -10,7 +10,7 @@ function BgButton({ setBgColor }) {
   ];
   function hoverColor() {}
   return (
-    <div className="grid lg:grid-cols-5 grid-cols-2 gap-x-2 gap-y-3 place-items-center lg:mx-auto lg:rounded-xl  lg:h-[60px]  bg-slate-300">
+    <div className="grid lg:grid-cols-5 grid-cols-2 gap-x-2 gap-y-3 p-2 place-items-center lg:mx-auto lg:rounded-xl  lg:h-[60px]  bg-slate-300">
       {colors.map((clr) => (
         <button
           onClick={() => setBgColor(`${clr.color}`)}
