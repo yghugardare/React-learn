@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useId } from "react";
 
 function InputBox({
   label,
@@ -9,15 +9,16 @@ function InputBox({
   isAmountDisabled = false,
   currencyOptions = [],
 }) {
+  let labelID = useId();
   return (
     <div className="flex items-center gap-x-10">
       <div className="grid">
-        <label htmlFor="priceInput">{label}</label>
+        <label htmlFor={labelID}>{label}</label>
         <input
           value={price}
           className="text-black p-2 outline-none cursor-pointer rounded-md bg-white"
           type="text"
-          id="priceInput"
+          id={labelID}
           disabled={isAmountDisabled}
           onChange={(e)=>onAmountChange&&onAmountChange(Number(e.target.value))}
 

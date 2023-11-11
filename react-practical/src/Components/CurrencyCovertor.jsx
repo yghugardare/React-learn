@@ -46,11 +46,11 @@ function CurrencyCovertor() {
         <InputBox
           price={convertedAmount}
           selectCurrency={to}
-          isAmountDisabled={false}  
+          isAmountDisabled={true}  
           currencyOptions={currencyArray}
           label={to}
           onCurrencyChange={(to) => setTo(to)}
-          onAmountChange={(convertedAmount)=>setConvertedAmount(convertedAmount)}
+          
         />
         <button className="w-full p-2 bg-blue-700 rounded-md my-2 hover:bg-sky-500">
           Convert {from.toUpperCase()} to {to.toUpperCase()}
