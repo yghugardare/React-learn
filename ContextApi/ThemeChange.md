@@ -15,13 +15,21 @@ export const ThemeContext = createContext({
 - Second in the same file we create ThemeContextProvider as a **variable** and export it.
 ```javascript
 import {createContext} from 'react;
-export const ThemeContext = createContext();
+export const ThemeContext = createContext({
+    themeMode:'light',
+    lightTheme:()=>{},
+    darkTheme:()=>{}
+});
 export const ThemeContextProvider = ThemeContext.Provider;
 ```
 - Thirdly, we create a **custom hook** that can use useContext w/o providing someContext.
 ```javascript
 import {createContext,useContext} from 'react;
-export const ThemeContext = createContext();
+export const ThemeContext = createContext({
+    themeMode:'light',
+    lightTheme:()=>{},
+    darkTheme:()=>{}
+});
 export const ThemeContextProvider = ThemeContext.Provider;
 export default useTheme(){
     return useContext(ThemeContext);
