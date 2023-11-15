@@ -1,7 +1,7 @@
 import { createSlice, nanoid } from "@reduxjs/toolkit";
 //create initial state for todo
 const initialState = {
-  todos: [{ id: 1, text: "Hello" }],
+  todos: [],
 };
 // create rducers aka slice
 // while creating a slice , we specify its name,initialState
@@ -21,23 +21,17 @@ export const todoSlice = createSlice({
     },
     removeTodo: (state, action) => {
       state.todos = state.todos.filter((todo) => todo.id !== action.payload);
-    }
-    
+    },
+    updateTodo: (state, action) => {
+      state.todos = state.todos.map((todo) =>
+        todo.id === action.payload.id
+          ? { ...todo, text: action.payload.text }
+          : todo
+      );
+    },
   },
 });
 // extract individual functionality
-export const {addTodo,removeTodo} = todoSlice.actions;
+export const { addTodo, removeTodo, updateTodo } = todoSlice.actions;
 // export all the reducers for the store to configure
 export default todoSlice.reducer;
-
-
-
-
-
-
-
-// updateTodo: (state,action) => {
-//     state.todos = state.todos.map(todo=>(
-//         todo.id === action.payload.id?action.payload:todo
-//     ))
-// }
