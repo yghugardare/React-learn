@@ -1,11 +1,13 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import { FaFacebook } from "react-icons/fa6";
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaYoutubeSquare } from "react-icons/fa";
+
 function Footer() {
   return (
-    <div className="my-1 h-20vh flex flex-col gap-y-2">
+    <div className="my-5 h-20vh flex flex-col gap-y-2">
       <div className="flex items-center justify-center gap-x-10 even:cursor-pointer odd:cursor-pointer ">
         <FaInstagramSquare size={30} />
         <FaFacebook size={30} />
@@ -13,23 +15,61 @@ function Footer() {
         <FaYoutubeSquare size={30} />
       </div>
       <div className="flex items-center justify-center gap-x-12 even:cursor-pointer odd:cursor-pointer ">
-        <p className=" transition-all ease-linear hover:border-b-2 hover:border-emerald-500">
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            ` ${"transition-all ease-linear border-b-2 hover:border-emerald-500"} ${
+              isActive ? "border-emerald-500 " : "border-transparent"
+            }`
+          }
+        >
           Home
-        </p>
-        <p className=" transition-all ease-linear hover:border-b-2 hover:border-emerald-500">
+        </NavLink>
+        <NavLink
+          to="/shop"
+          className={({ isActive }) =>
+            ` ${"transition-all ease-linear border-b-2 hover:border-emerald-500"} ${
+              isActive ? "border-emerald-500 " : " bg-transparent border-transparent"
+            }`
+          }
+        >
           Shop
-        </p>
-        <p className=" transition-all ease-linear hover:border-b-2 hover:border-emerald-500">
-          Admin
-        </p>
-        <p className=" transition-all ease-linear hover:border-b-2 hover:border-emerald-500">
+        </NavLink>
+        <NavLink
+          to="/cart"
+          className={({ isActive }) =>
+            ` ${"transition-all ease-linear border-b-2 hover:border-emerald-500"} ${
+              isActive ? "border-emerald-500 " : "border-transparent"
+            }`
+          }
+        >
           Cart
-        </p>
-        <p className=" transition-all ease-linear hover:border-b-2 hover:border-emerald-500">
+        </NavLink>
+        <NavLink
+          to="/admin"
+          className={({ isActive }) =>
+            ` ${"transition-all ease-linear border-b-2 hover:border-emerald-500"} ${
+              isActive ? "border-emerald-500 " : "border-transparent"
+            }`
+          }
+        >
+          Admin
+        </NavLink>
+        <NavLink
+          to="/contact"
+          className={({ isActive }) =>
+            ` ${"transition-all ease-linear border-b-2 hover:border-emerald-500"} ${
+              isActive ? "border-emerald-500 " : "border-transparent"
+            }`
+          }
+        >
           Contact
-        </p>
+        </NavLink>
       </div>
-      <p className="text-center font-bold">Copyright &copy; 2023 Designed by <span className=" font-normal text-gray-300">Yash</span></p>
+      <p className="text-center font-bold">
+        Copyright &copy; 2023 Designed by{" "}
+        <span className=" font-normal text-gray-300">Yash</span>
+      </p>
     </div>
   );
 }

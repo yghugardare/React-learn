@@ -3,9 +3,9 @@ import watchData from '../assets/data'
 import Product from './Product'
 function ShowProducts() {
   return (
-    <div className='bg-slate-600 overflow-auto h-[70vh]'>
-       <h1 className='text-3xl font-bold m-2'>Products</h1>
-       <div className='p-2 flex flex-wrap justify-evenly gap-x-40 gap-y-5 '>
+    <div className='bg-slate-900 overflow-auto h-[70vh]'>
+       <h1 className='text-2xl font-semibold text-center m-2'>Products</h1>
+       <div className='p-2 flex flex-wrap gap-x-14 justify-center '>
             {
                 watchData.map(watch=>(
                     <Product

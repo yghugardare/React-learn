@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SlideShow from "./SlideShow";
+import { Link } from "react-router-dom";
 
 const slides = [
     {
@@ -38,9 +39,11 @@ function Home() {
           Experience exclusive designs and impeccable craftsmanship, all in one
           place.{" "}
         </p>
-        <button className="rounded-xl outline-none p-3 bg-purple-600 self-start hover:bg-purple-500">
+        <Link 
+        to='/shop'
+        className="rounded-xl outline-none p-3 bg-purple-600 self-start hover:bg-purple-500">
           Shop Now
-        </button>
+        </Link>
       </div>
       <div className="w-[50%] h-full bg-black">
         <SlideShow slides={slides} autoSlide={true} slideDuration={4000} />
