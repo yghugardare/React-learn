@@ -11,7 +11,7 @@ function DeleteProduct() {
   function handleDel(){
    
     removeFromWatchlist(id);
-    setFlag(flag=>!flag)
+    setFlag(flag=>!flag);
     setid("")
     alert("The product has been deleted successfully 🗑️");
   }
