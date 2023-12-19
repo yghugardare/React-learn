@@ -35,7 +35,7 @@ function App() {
     }
   }
   function removeFromWatchlist(id) {
-    setWatchList(watchList.filter((watchObj) => watchObj.id !== id));
+    setWatchList(watchList.filter((watchObj) => watchObj.id != id));
   }
   return (
     <>
