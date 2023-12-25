@@ -13,9 +13,9 @@ import { useState } from "react";
 function App() {
   const [watchList, setWatchList] = useState([]);
   function addToWatchlist(watchObj) {
-    setWatchList((prevWatchObjs) => [
+    setWatchList((prevList) => [
       { id: Date.now(), ...watchObj },
-      ...prevWatchObjs,
+      ...prevList,
     ]);
   }
   function updateWatchList(id, watchObj) {

@@ -6,7 +6,7 @@ function AddProduct() {
   const[name,setName] = useState("");
   const [imageUrl, setUrl] = useState("");
   const [price, setPrice] = useState("")
-  let {addToWatchlist,watchList} = useWatchContext();
+  let {addToWatchlist} = useWatchContext();
   function handleSubmit(e){
     e.preventDefault();
     addToWatchlist({name,price,imageUrl});
