@@ -16,6 +16,11 @@ function Cart() {
       sum += obj[key];
     }
     setSubtotal(sum)
+    if(sum !==0){
+      setTotal(sum+10)
+    }else{
+      setTotal(0)
+    }
   }
   function removeKey(id){
     const newObj = {...obj};
@@ -25,7 +30,8 @@ function Cart() {
   }
   useEffect(()=>{
     changeSubtotal()
-    setTotal(subtotal+10)
+    
+    
   },[obj])
   return (
     <div className="h-[70vh] w-full">
