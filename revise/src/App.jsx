@@ -12,23 +12,36 @@ import { useState } from "react";
 
 function App() {
   const [watchList, setWatchList] = useState([]);
-  function addToWatchlist(watchObj) {
-    setWatchList((prevList) => [
-      { id: Date.now(), ...watchObj },
+  const [cartList, setCartList] = useState([]);
+  
+  function addToCart(watchObj, quantity) {
+    quantity;
+    setCartList((prevList) => [
+      { quantity: quantity, ...watchObj },
       ...prevList,
     ]);
   }
-  function updateWatchList(id, watchObj) {
-    const selectedWatcObj = watchList.filter((watch) => watch.id === id);
+
+  function addToWatchlist(watchObj) {
+    setWatchList((prevList) => [{ id: Date.now(), ...watchObj }, ...prevList]);
+  }
+  function updateWatchList(watchObj) {
+    const selectedWatcObj = watchList.filter(
+      (watch) => watch.id == watchObj.id
+    );
 
     let index = null;
-    selectedWatcObj
-      ? (index = watchList.indexOf(selectedWatcObj))
-      : (index = -1);
+    if (selectedWatcObj.length > 0) {
+      index = watchList.indexOf(selectedWatcObj[0]);
+    } else {
+      index = -1;
+    }
+    console.log("In function- ", index);
     if (index !== -1) {
+      watchList.splice(index, 1, watchObj);
       setWatchList(
         // replace value
-        (watchList) => watchList.splice(index, 1, watchObj)
+        watchList
       );
     } else {
       setWatchList(watchList);
@@ -36,6 +49,9 @@ function App() {
   }
   function removeFromWatchlist(id) {
     setWatchList(watchList.filter((watchObj) => watchObj.id != id));
+  }
+  function removeFromCart(id){
+    setCartList(cartList.filter((cartObj)=> cartObj.id !==id))
   }
   return (
     <>
@@ -46,6 +62,9 @@ function App() {
           addToWatchlist,
           updateWatchList,
           removeFromWatchlist,
+          cartList,
+          addToCart,
+          removeFromCart,
         }}
       >
         <Outlet />

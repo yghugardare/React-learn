@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { FaRegCopy } from "react-icons/fa";
+import { useWatchContext } from "../context/WatchContext";
 function Product({name ="Rolex",price=10,imageUrl,id}) {
     const [qty,setQty] = useState(1);
+    const {addToCart} = useWatchContext();
     function addValue(){
       if(qty < 10){
         setQty(qty+1);
@@ -16,6 +18,10 @@ function Product({name ="Rolex",price=10,imageUrl,id}) {
     function handleCopy(){
       window.navigator.clipboard.writeText(id);
       alert(id)
+    }
+    function handleAdd(){
+      alert("Item added to cart ✅")
+      addToCart({id,name,price,imageUrl},qty)
     }
   return (
     <div>
@@ -37,7 +43,9 @@ function Product({name ="Rolex",price=10,imageUrl,id}) {
             onClick={addValue}
             className=" bg-sky-500 w-7 h-7 px-2 font-bold rounded-md outline-none">+</button>
         </div>
-        <button className="bg-blue-600 hover:bg-blue-500 rounded-sm my-2 p-2 mx-2">Add to cart</button>
+        <button
+        onClick={handleAdd}
+        className="bg-blue-600 hover:bg-blue-500 rounded-sm my-2 p-2 mx-2">Add to cart</button>
       </div>
 
     </div>
