@@ -1,37 +1,63 @@
 import React, { useState } from "react";
+import { FaRegCopy } from "react-icons/fa";
 
-function Product({name ="Rolex",price=10}) {
-    const [qty,setQty] = useState(1);
-    function addValue(){
-      if(qty < 10){
-        setQty(qty+1);
-        
-      }
+function Product({ name = "Rolex", price = 10, imageUrl, id }) {
+  const [qty, setQty] = useState(1);
+  function addValue() {
+    if (qty < 10) {
+      setQty(qty + 1);
     }
-    function removeValue(){
-      if(qty>1){
-        setQty(qty-1);
-      }
+  }
+  function removeValue() {
+    if (qty > 1) {
+      setQty(qty - 1);
     }
+  }
+  function handleCopy() {
+    window.navigator.clipboard.writeText(id);
+    alert(id);
+  }
+  function handleAdd() {
+    alert("Item added to cart ✅");
+    addToCart({ id, name, price, imageUrl }, qty);
+  }
   return (
     <div>
-      <div className="w-[300px] border-2 border-white bg-black/70 grid  py-2 px-1">
+      <div className="relative w-[250px] border-2 border-white bg-black/70 grid  py-2 px-1">
+        <div
+          onClick={handleCopy}
+          className=" absolute top-3 left-1 cursor-pointer"
+        >
+          <FaRegCopy size={15} />
+        </div>
         <img
-          src="https://images.lifestyleasia.com/wp-content/uploads/sites/7/2020/08/06134710/Rolex-JPS-HERO-1600x873-1.jpg?tr=w-1200,h-900"
-          alt="rolex"
+          className="mx-auto object-cover w-[200px] h-[250px] "
+          src={String(imageUrl)}
+          alt="watch"
         />
         <h2 className="text-lg mx-auto">{name}</h2>
         <p className="text-center">${price}</p>
         <div className="flex justify-around">
-            <button 
+          <button
             onClick={removeValue}
-            className="bg-sky-500 w-7 h-7 px-2 font-bold rounded-md outline-none">-</button>
-            <span>Qty: {qty}</span>
-            <button
+            className="bg-sky-500 w-7 h-7 px-2 font-bold rounded-md outline-none"
+          >
+            -
+          </button>
+          <span>Qty: {qty}</span>
+          <button
             onClick={addValue}
-            className=" bg-sky-500 w-7 h-7 px-2 font-bold rounded-md outline-none">+</button>
+            className=" bg-sky-500 w-7 h-7 px-2 font-bold rounded-md outline-none"
+          >
+            +
+          </button>
         </div>
-        <button className="bg-blue-600 hover:bg-blue-500 rounded-sm my-2 p-2 mx-2">Add to cart</button>
+        <button
+          onClick={handleAdd}
+          className="bg-blue-600 hover:bg-blue-500 rounded-sm my-2 p-2 mx-2"
+        >
+          Add to cart
+        </button>
       </div>
     </div>
   );

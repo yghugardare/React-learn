@@ -7,17 +7,22 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 
 import ShowProducts from "./components/ShowProducts";
+import { Provider } from "react-redux";
+import { store } from "./store";
 
 function App() {
+  
   return (
     <>
-    <Header/>
-    {/* <Home/> */}
-    {/* <Admin/> */}
-    {/* <Contact/>
-     */}
-     <Outlet/>
-    <Footer/>
+      <Provider store={store}>
+        <Header />
+        {/* <Home/> */}
+        {/* <Admin/> */}
+        {/* <Contact/>
+         */}
+        <Outlet />
+        <Footer />
+      </Provider>
     </>
   );
 }
