@@ -147,7 +147,8 @@ import { NavLink } from "react-router-dom";
 ```
 
 ## useParam
-- react router hook that returns an object of key/value pairs of the dynamic params from the current URL that were matched by the <Route path>
+- react router hook that returns an object of key/value pairs of the dynamic params from the current URL that were matched by the Route Path
+ 
 ```javascript
 import React from "react";
 import { Link, useParams } from "react-router-dom";
